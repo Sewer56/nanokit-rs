@@ -5,6 +5,7 @@ edition = "2021"
 description = "A collection of tiny, reusable utility methods that reduce code size and improve performance."
 repository = "https://github.com/Sewer56/nanokit-rs"
 license-file = "LICENSE"
+readme = "README.md"
 include = ["src/**/*"]
 
 [features]

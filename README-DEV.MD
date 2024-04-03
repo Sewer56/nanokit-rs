@@ -77,9 +77,9 @@ And run with command `my_benchmark-eced832ac8f31257.exe --bench --profile-time 1
 
 ![example](./assets/profile_example.png)
 
-## Building C Libraries Locally
+## Optimizing Crate for Size
 
-Reloaded-based C libraries are built with `panic=abort` and self-built STD to minimize binary size.
+This project tests binary size by building C libraries with the required exports.
 
 First get the prerequisites (nightly rust).
 
@@ -88,7 +88,7 @@ rustup toolchain install nightly
 rustup component add rust-src --toolchain nightly
 ```
 
-To build C library locally, run the following command:
+To test building C library locally, run the following command:
 
 ```
 RUSTFLAGS="-C panic=abort -C lto=fat -C embed-bitcode=yes" cargo +nightly rustc -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --crate-type cdylib --crate-type staticlib --target x86_64-unknown-linux-gnu
@@ -96,7 +96,7 @@ RUSTFLAGS="-C panic=abort -C lto=fat -C embed-bitcode=yes" cargo +nightly rustc 
 
 Replace `x86_64-unknown-linux-gnu` with your [target triple][target-triple].
 
-## Optimizing for Size when Creating C Libraries
+### How to Measure Code Size
 
 1. Add `"cdylib"` crate type to `Cargo.toml` (temporarily!! do not commit)
 
@@ -119,9 +119,10 @@ Run `cargo-bloat` the following command to calculate package size:
 RUSTFLAGS="-C panic=abort -C lto=fat -C embed-bitcode=yes" cargo +nightly bloat -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort --target x86_64-pc-windows-gnu --profile profile --crate-type cdylib -n 100 --features c-exports
 ```
 
-Change `--target` if needed for your platform.  
-This should produce binaries more appropriate for dynamic linking from C.  
+Change `--target` if needed for your platform.
+You can now measure method sizes.
 
+When you add a new method to the library, make a C export for it, and measure from here.
 
 ## File Layout
 
@@ -140,14 +141,6 @@ The `src` folder should contains all source code for your project.
 ## Releasing a New Version
 
 Make a tag, aptly named after the current version of the project. For instance, if you are publishing version `0.1.0`, the tag should be `0.1.0`. This will create a GitHub release for you automatically.
-
-## Contributing
-
-See [CONTRIBUTING](CONTRIBUTING.MD) for guidance on how to contribute to this project.  
-
-## License
-
-Licensed under [MIT](./LICENSE).
 
 [codecov]: https://about.codecov.io/
 [codelldb]: https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb
