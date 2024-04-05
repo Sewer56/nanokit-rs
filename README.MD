@@ -7,7 +7,7 @@
 ## About
 
 A collection of tiny, reusable utility methods that reduce code size and improve performance.
-End user readme for developers/contributors is available at [README-DEV.MD](./README-DEV.MD).
+Readme for developers/contributors is available at [README-DEV.MD](./README-DEV.MD).
 
 ## String Construction
 
