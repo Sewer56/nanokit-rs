@@ -51,6 +51,10 @@ let result = concat_2_no_overflow(base_msg, text);
 assert_eq!(result, "Hello, world!");
 ```
 
+## Features
+
+- `no-inline-concat`: Disables inlining of string concat functions (saves code size).
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.MD) for guidance on how to contribute to this project.  

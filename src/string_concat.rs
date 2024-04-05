@@ -21,6 +21,7 @@
 /// let result = concat_2(base_string, text_string);
 /// assert_eq!(result, "The quick brown fox jumps over the lazy dog.");
 /// ```
+#[cfg_attr(feature = "no-inline-concat", inline(never))]
 pub fn concat_2<S1, S2>(base: S1, text: S2) -> String
 where
     S1: AsRef<str>,
@@ -72,6 +73,7 @@ where
 /// let result = concat_3(base, middle, end);
 /// assert_eq!(result, "Hello, beautiful world!");
 /// ```
+#[cfg_attr(feature = "no-inline-concat", inline(never))]
 pub fn concat_3<S1, S2, S3>(base: S1, middle: S2, end: S3) -> String
 where
     S1: AsRef<str>,
@@ -129,6 +131,7 @@ where
 /// let result = concat_4(s1, s2, s3, s4);
 /// assert_eq!(result, "Hello, world!");
 /// ```
+#[cfg_attr(feature = "no-inline-concat", inline(never))]
 pub fn concat_4<S1, S2, S3, S4>(s1: S1, s2: S2, s3: S3, s4: S4) -> String
 where
     S1: AsRef<str>,
@@ -192,6 +195,7 @@ where
 /// let result = concat_5(s1, s2, s3, s4, s5);
 /// assert_eq!(result, "Hello, beautiful world!");
 /// ```
+#[cfg_attr(feature = "no-inline-concat", inline(never))]
 pub fn concat_5<S1, S2, S3, S4, S5>(s1: S1, s2: S2, s3: S3, s4: S4, s5: S5) -> String
 where
     S1: AsRef<str>,
