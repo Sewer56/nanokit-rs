@@ -55,6 +55,10 @@ assert_eq!(result, "Hello, world!");
 
 - `no-inline-concat`: Disables inlining of string concat functions (saves code size).
 
+## Related Crates
+
+- [itoa](https://crates.io/crates/itoa): Integer to text.
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.MD) for guidance on how to contribute to this project.  
