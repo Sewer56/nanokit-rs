@@ -38,6 +38,19 @@ Also saves some instructions.
 
 Additional methods `concat_3`, `concat_4`, `concat_5` exist.
 
+### Unsafe Concat
+
+You can save on another 2 instructions per concatenation if you know the final string length
+is lesser than `isize::MAX`.
+
+```rust
+use nanokit::string_concat::concat_2;
+let base_msg = "Hello, ";
+let text = "world!";
+let result = concat_2_no_overflow(base_msg, text);
+assert_eq!(result, "Hello, world!");
+```
+
 ## Contributing
 
 See [CONTRIBUTING](CONTRIBUTING.MD) for guidance on how to contribute to this project.  

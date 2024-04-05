@@ -26,9 +26,11 @@ where
     S1: AsRef<str>,
     S2: AsRef<str>,
 {
+    // https://godbolt.org/z/EYKn66ahW
     let base = base.as_ref();
     let text = text.as_ref();
     let total_length = base.len() + text.len();
+
     let mut result = String::with_capacity(total_length);
 
     unsafe {
