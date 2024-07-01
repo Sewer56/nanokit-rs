@@ -36,9 +36,12 @@ jobs:
       - name: Run cargo-semver-checks
         if: github.event_name == 'pull_request' || startsWith(github.ref, 'refs/tags/')
         run: |
-          rustup target add ${{ matrix.target }}
-          cargo install cargo-semver-checks --locked
-          cargo semver-checks --target ${{ matrix.target }}
+          cargo +stable install cargo-semver-checks --locked
+          cargo +stable semver-checks --target ${{ matrix.target }}
+
+      - name: Build documentation
+        if: github.event_name == 'pull_request' || startsWith(github.ref, 'refs/tags/')
+        run: cargo +stable doc --no-deps --target ${{ matrix.target }}
 
   publish-crate:
     permissions:
