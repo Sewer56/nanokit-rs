@@ -14,7 +14,7 @@ use core::hint::unreachable_unchecked;
 /// # Examples
 ///
 /// ```
-/// use nanokit::string_concat::concat_2_no_overflow;
+/// use nanokit::string_concat_unsafe::concat_2_no_overflow;
 /// let base_msg = "Hello, ";
 /// let text = "world!";
 /// let result = unsafe { concat_2_no_overflow(base_msg, text) };
@@ -64,7 +64,7 @@ where
 /// # Examples
 ///
 /// ```
-/// use nanokit::string_concat::concat_3_no_overflow;
+/// use nanokit::string_concat_unsafe::concat_3_no_overflow;
 /// let base = "The quick";
 /// let middle = " brown fox";
 /// let end = " jumps over the lazy dog.";
@@ -121,7 +121,7 @@ where
 /// # Examples
 ///
 /// ```
-/// use nanokit::string_concat::concat_4_no_overflow;
+/// use nanokit::string_concat_unsafe::concat_4_no_overflow;
 /// let s1 = "The";
 /// let s2 = " quick";
 /// let s3 = " brown";
@@ -183,7 +183,7 @@ where
 /// # Examples
 ///
 /// ```
-/// use nanokit::string_concat::concat_5_no_overflow;
+/// use nanokit::string_concat_unsafe::concat_5_no_overflow;
 /// let s1 = "The";
 /// let s2 = " quick";
 /// let s3 = " brown";
