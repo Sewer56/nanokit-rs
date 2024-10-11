@@ -51,9 +51,37 @@ let result = concat_2_no_overflow(base_msg, text);
 assert_eq!(result, "Hello, world!");
 ```
 
-## Features
+### Features
 
 - `no-inline-concat`: Disables inlining of string concat functions (saves code size).
+
+## Numeric Utilities
+
+### Count Needed Bits
+
+Provides a method to determine the number of bits needed to store a given number.
+
+```rust
+let number: u64 = 5;
+println!("Bits needed for {}: {}", number, number.bits_needed_to_store());
+```
+
+The produced code does not panic, nor does it branch.
+Generated x86_64 assembly for `u64`:
+
+```asm
+bits_needed_to_store:
+    lzcnt   rcx, rdi
+    mov     eax, 64
+    sub     eax, ecx
+    ret
+```
+
+Note: The number of bits needed to store the value `0` is returned as `0`.
+
+This may not match your expectations. If you expect the result to be 1; try
+the [count-digits] crate by [nordzilla]. Do note that said crate uses `ilog2`, which
+may panic.
 
 ## Related Crates
 
@@ -73,3 +101,5 @@ If you find this library useful, please contribute back!!
 <!-- Links -->
 [concat-strs]: https://crates.io/crates/concat_strs
 [string-concat]: https://crates.io/crates/string_concat
+[count-digits]: https://github.com/nordzilla/count-digits
+[nordzilla]: https://github.com/nordzilla
