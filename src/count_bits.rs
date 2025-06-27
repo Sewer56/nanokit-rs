@@ -85,8 +85,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (u8)",
-            input
+            "Failed for input: {input} (u8)"
         );
     }
 
@@ -116,8 +115,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (u16)",
-            input
+            "Failed for input: {input} (u16)"
         );
     }
 
@@ -147,8 +145,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (u32)",
-            input
+            "Failed for input: {input} (u32)"
         );
     }
 
@@ -178,8 +175,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (u64)",
-            input
+            "Failed for input: {input} (u64)"
         );
     }
 
@@ -209,8 +205,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (u128)",
-            input
+            "Failed for input: {input} (u128)"
         );
     }
 
@@ -235,13 +230,12 @@ mod tests {
     #[case(256usize, 9)]
     #[case(1023usize, 10)]
     #[case(1024usize, 11)]
-    #[case(usize::MAX, (std::mem::size_of::<usize>() * 8) as u32)]
+    #[case(usize::MAX, (core::mem::size_of::<usize>() * 8) as u32)]
     fn test_bits_needed_usize(#[case] input: usize, #[case] expected: u32) {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (usize)",
-            input
+            "Failed for input: {input} (usize)",
         );
     }
 
@@ -264,8 +258,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (i8)",
-            input
+            "Failed for input: {input} (i8)"
         );
     }
 
@@ -298,8 +291,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (i16)",
-            input
+            "Failed for input: {input} (i16)"
         );
     }
 
@@ -332,8 +324,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (i32)",
-            input
+            "Failed for input: {input} (i32)"
         );
     }
 
@@ -366,8 +357,7 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (i64)",
-            input
+            "Failed for input: {input} (i64)"
         );
     }
 
@@ -400,19 +390,18 @@ mod tests {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (i128)",
-            input
+            "Failed for input: {input} (i128)"
         );
     }
 
     #[rstest]
     #[case(0isize, 0)]
     #[case(1isize, 1)]
-    #[case(-1isize, (std::mem::size_of::<isize>() * 8) as u32)]
+    #[case(-1isize, (core::mem::size_of::<isize>() * 8) as u32)]
     #[case(2isize, 2)]
-    #[case(-2isize, (std::mem::size_of::<isize>() * 8) as u32)]
+    #[case(-2isize, (core::mem::size_of::<isize>() * 8) as u32)]
     #[case(3isize, 2)]
-    #[case(-3isize, (std::mem::size_of::<isize>() * 8) as u32)]
+    #[case(-3isize, (core::mem::size_of::<isize>() * 8) as u32)]
     #[case(4isize, 3)]
     #[case(7isize, 3)]
     #[case(8isize, 4)]
@@ -428,14 +417,13 @@ mod tests {
     #[case(256isize, 9)]
     #[case(1023isize, 10)]
     #[case(1024isize, 11)]
-    #[case(isize::MAX, ((std::mem::size_of::<isize>() * 8) as u32) - 1)]
-    #[case(isize::MIN, (std::mem::size_of::<isize>() * 8) as u32)]
+    #[case(isize::MAX, ((core::mem::size_of::<isize>() * 8) as u32) - 1)]
+    #[case(isize::MIN, (core::mem::size_of::<isize>() * 8) as u32)]
     fn test_bits_needed_isize(#[case] input: isize, #[case] expected: u32) {
         assert_eq!(
             input.bits_needed_to_store(),
             expected,
-            "Failed for input: {} (isize)",
-            input
+            "Failed for input: {input} (isize)"
         );
     }
 }

@@ -1,4 +1,9 @@
-#![cfg_attr(not(feature = "std"), no_std)]
+#![no_std]
+#[cfg(feature = "std")]
+extern crate std;
+
+extern crate alloc;
+
 pub mod count_bits;
 #[cfg(feature = "c-exports")]
 pub mod exports;

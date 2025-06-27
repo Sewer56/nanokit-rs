@@ -1,5 +1,6 @@
 #![allow(improper_ctypes_definitions)]
 
+use alloc::string::String;
 // Exports for code size measure only.
 use crate::{string_concat::*, string_concat_unsafe::*};
 
