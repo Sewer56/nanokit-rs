@@ -36,8 +36,8 @@ updates:
           - "patch"
     # Customize commit messages
     commit-message:
-      prefix: "chore"
-      prefix-development: "chore"
+      prefix: "Updated:"
+      prefix-development: "Updated:"
       include: "scope"
     # Allow automatic rebasing when conflicts occur
     rebase-strategy: "auto" 
