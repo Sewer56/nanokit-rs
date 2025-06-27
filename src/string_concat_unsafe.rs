@@ -1,3 +1,4 @@
+use alloc::string::String;
 use core::hint::unreachable_unchecked;
 
 /// Concatenates two strings using unsafe Rust for better performance.
@@ -245,6 +246,7 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use alloc::string::ToString;
 
     #[test]
     fn test_concat_2_strings_str_slices() {

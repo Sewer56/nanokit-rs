@@ -1,3 +1,5 @@
+use alloc::string::String;
+
 /// Concatenates two strings using unsafe Rust for better performance.
 ///
 /// This function takes two parameters, `base` and `text`, both of which can be any type
@@ -237,6 +239,7 @@ where
 #[cfg(test)]
 mod tests {
     use super::*;
+    use alloc::string::ToString;
 
     #[test]
     fn test_concat_2_strings_str_slices() {
