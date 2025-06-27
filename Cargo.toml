@@ -1,6 +1,6 @@
 [package]
 name = "nanokit"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "A collection of tiny, reusable utility methods that reduce code size and improve performance."
 repository = "https://github.com/Sewer56/nanokit-rs"
