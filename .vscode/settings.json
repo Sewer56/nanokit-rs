@@ -1,9 +1,0 @@
-{
-    "[rust]": {
-        "editor.formatOnSave": true
-    },
-    "coverage-gutters.coverageFileNames": [
-        "cobertura.xml"
-    ],
-    "rust-analyzer.check.command": "clippy"
-}
