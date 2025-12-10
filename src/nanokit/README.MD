@@ -23,10 +23,10 @@ nanokit = "0.2.1"
 
 ### Feature Flags
 
-| Feature | Description |
-| ------- | ----------- |
-| `std` | Enable standard library support (enabled by default) |
-| `c-exports` | Enable C FFI exports for code size measurement |
+| Feature            | Description                                            |
+| ------------------ | ------------------------------------------------------ |
+| `std`              | Enable standard library support (enabled by default)   |
+| `c-exports`        | Enable C FFI exports for code size measurement         |
 | `no-inline-concat` | Disable inlining of concat functions (saves code size) |
 
 ## String Construction
@@ -104,9 +104,13 @@ may panic.
 
 - [itoa](https://crates.io/crates/itoa): Integer to text.
 
+## Developer Manual
+
+For step-by-step development guidance, see the [Developer Manual](https://reloaded-project.github.io/reloaded-templates-rust/manual/).
+
 ## Contributing
 
-See [CONTRIBUTING](https://github.com/Sewer56/nanokit-rs/blob/main/CONTRIBUTING.MD) for guidance on how to contribute to this project.  
+See the [Contributing Guide](https://reloaded-project.github.io/reloaded-templates-rust/manual/#contributing) for details.
 
 ## License
 

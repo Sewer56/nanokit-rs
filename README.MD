@@ -6,6 +6,12 @@
 
 A collection of tiny, reusable utility methods that reduce code size and improve performance.
 
+## Features
+
+- Fast string concatenation with minimal code size
+- Bit counting utilities
+- `no_std` compatible with optional `std` feature
+
 ## Quick Start
 
 Add to your `Cargo.toml`:
@@ -15,13 +21,31 @@ Add to your `Cargo.toml`:
 nanokit = "0.2.1"
 ```
 
+### String Concatenation
+
 ```rust
 use nanokit::string_concat::concat_2;
 let result = concat_2("Hello, ", "world!");
 assert_eq!(result, "Hello, world!");
 ```
 
-See the [nanokit crate documentation](./src/nanokit/README.MD) for detailed usage.
+### Unsafe String Concatenation
+
+Save 2 instructions when you know the result length is less than `isize::MAX`:
+
+```rust
+use nanokit::string_concat_unsafe::concat_2_no_overflow;
+let result = unsafe { concat_2_no_overflow("Hello, ", "world!") };
+```
+
+### Bit Counting
+
+```rust
+use nanokit::count_bits::BitsNeeded;
+assert_eq!(5u64.bits_needed_to_store(), 3); // 5 = 0b101
+```
+
+For more details, see the [nanokit crate documentation](./src/nanokit/README.MD).
 
 ## Crates
 
@@ -33,7 +57,7 @@ For step-by-step development guidance, see the [Developer Manual](https://reload
 
 ## Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.MD) for guidance on how to contribute to this project.
+We welcome contributions! See the [Contributing Guide](https://reloaded-project.github.io/reloaded-templates-rust/manual/#contributing) for details.
 
 ## License
 
