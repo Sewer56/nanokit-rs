@@ -1,3 +1,4 @@
+#![doc = include_str!(concat!("../", env!("CARGO_PKG_README")))]
 #![no_std]
 #[cfg(feature = "std")]
 extern crate std;
