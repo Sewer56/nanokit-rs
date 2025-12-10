@@ -106,11 +106,11 @@ may panic.
 
 ## Contributing
 
-See [CONTRIBUTING](../../CONTRIBUTING.MD) for guidance on how to contribute to this project.  
+See [CONTRIBUTING](https://github.com/Sewer56/nanokit-rs/blob/main/CONTRIBUTING.MD) for guidance on how to contribute to this project.  
 
 ## License
 
-Licensed under [MIT](../../LICENSE).
+Licensed under [MIT](https://github.com/Sewer56/nanokit-rs/blob/main/LICENSE).
 
 <!-- Links -->
 [concat-strs]: https://crates.io/crates/concat_strs
